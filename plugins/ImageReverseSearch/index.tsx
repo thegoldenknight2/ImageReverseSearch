@@ -43,7 +43,7 @@ export default {
 
                     if (buttons.some((b: any) => b?.props?.label === "Reverse Search Image")) return;
 
-                    const icon = getAssetIDByName("ic_search");
+                    const icon = getAssetIDByName("SearchIcon");
 
                     buttons.push(
                         <ActionSheetRow
