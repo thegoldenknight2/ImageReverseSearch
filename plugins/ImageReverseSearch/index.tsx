@@ -1,5 +1,6 @@
 import { findByProps } from "@vendetta/metro";
 import { before, after } from "@vendetta/patcher";
+import { getAssetIDByName } from "@vendetta/ui/assets";
 import { Forms } from "@vendetta/ui/components";
 import { findInReactTree } from "@vendetta/utils";
 import { ReactNative } from "@vendetta/metro/common";
@@ -36,6 +37,7 @@ export default {
                     buttons.push(
                         <ActionSheetRow
                             label="Reverse Search Image"
+                            icon={<ActionSheetRow.Icon source={getAssetIDByName("ic_search")} />}
                             onPress={() => {
                                 LazyActionSheet.hideActionSheet();
                                 ReactNative.Linking.openURL(
