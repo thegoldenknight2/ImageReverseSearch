@@ -1,6 +1,6 @@
 {
     "name": "ImageReverseSearch",
-    "description": "Add a option to reverse search a image.",
+    "description": "Add a option to reverse search a image, also works on gifs",
     "authors": [
         {
             "name": "zgoldenknight",
@@ -9,6 +9,6 @@
     ],
     "main": "index.tsx",
     "vendetta": {
-        "icon": "ic_badge_staff"
+        "icon": "ic_image"
     }
 }
