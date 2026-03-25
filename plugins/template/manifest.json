@@ -1,13 +1,13 @@
 {
-    "name": "Template Plugin",
-    "description": "A plugin for use as a template.",
+    "name": "ImageReverseSearch",
+    "description": "Add a option to reverse search a image.",
     "authors": [
         {
-            "name": "You!",
-            "id": "YOUR_ID_HERE"
+            "name": "zgoldenknight",
+            "id": "1337477888139726889"
         }
     ],
-    "main": "src/index.ts",
+    "main": "index.ts",
     "vendetta": {
         "icon": "ic_badge_staff"
     }
