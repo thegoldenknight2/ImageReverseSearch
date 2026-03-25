@@ -53,7 +53,7 @@ export default {
                                     source={icon}
                                     IconComponent={() => (
                                         <ReactNative.Image
-                                            resizeMode="cover"
+                                            resizeMode="contain"
                                             style={styles.icon}
                                             source={icon}
                                         />
