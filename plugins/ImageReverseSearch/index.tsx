@@ -37,7 +37,8 @@ export default {
                     buttons.push(
                         <ActionSheetRow
                             label="Reverse Search Image"
-                            icon={<ActionSheetRow.Icon source={getAssetIDByName("ic_search")} />}
+                            icon={<ActionSheetRow.Icon source={getAssetIDByName("ic_search_24px")} />}
+                            onPress={() => {
                                 LazyActionSheet.hideActionSheet();
                                 ReactNative.Linking.openURL(
                                     `https://lens.google.com/uploadbyurl?url=${encodeURIComponent(imageUrl)}`
