@@ -3,10 +3,19 @@ import { before, after } from "@vendetta/patcher";
 import { getAssetIDByName } from "@vendetta/ui/assets";
 import { Forms } from "@vendetta/ui/components";
 import { findInReactTree } from "@vendetta/utils";
-import { ReactNative } from "@vendetta/metro/common";
+import { ReactNative, stylesheet } from "@vendetta/metro/common";
+import { semanticColors } from "@vendetta/ui";
 
 const LazyActionSheet = findByProps("openLazy", "hideActionSheet");
 const ActionSheetRow = findByProps("ActionSheetRow")?.ActionSheetRow ?? Forms.FormRow;
+
+const styles = stylesheet.createThemedStyleSheet({
+    icon: {
+        width: 24,
+        height: 24,
+        tintColor: semanticColors.INTERACTIVE_NORMAL
+    }
+});
 
 let patches: (() => void)[] = [];
 
@@ -34,10 +43,23 @@ export default {
 
                     if (buttons.some((b: any) => b?.props?.label === "Reverse Search Image")) return;
 
+                    const icon = getAssetIDByName("ic_search");
+
                     buttons.push(
                         <ActionSheetRow
                             label="Reverse Search Image"
-                            icon={<ActionSheetRow.Icon source={getAssetIDByName("ic_search")} />}
+                            icon={
+                                <ActionSheetRow.Icon
+                                    source={icon}
+                                    IconComponent={() => (
+                                        <ReactNative.Image
+                                            resizeMode="cover"
+                                            style={styles.icon}
+                                            source={icon}
+                                        />
+                                    )}
+                                />
+                            }
                             onPress={() => {
                                 LazyActionSheet.hideActionSheet();
                                 ReactNative.Linking.openURL(
